@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eval-lake"
+version = "1.0.0"
+description = "The Open-Source GenAI Evaluation, DuckDB-powered ETL, and Cryptographic GRC Governance Lakehouse"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Ahmed Hassan", email = "ahmed@a2zsoc.com" }
+]
+keywords = [
+    "ai-governance",
+    "llm-evaluation",
+    "eu-ai-act",
+    "nist-ai-rmf",
+    "iso-42001",
+    "agentic-ai",
+    "duckdb",
+    "data-lineage",
+    "oax-protocol",
+    "grc-automation"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Security",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Database"
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+analytics = [
+    "duckdb>=0.9.0",
+    "pyarrow>=14.0.0"
+]
+crypto = [
+    "cryptography>=41.0.0"
+]
+all = [
+    "duckdb>=0.9.0",
+    "pyarrow>=14.0.0",
+    "cryptography>=41.0.0"
+]
+
+[project.scripts]
+eval-lake = "evallake.cli:main"
+evallake = "evallake.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

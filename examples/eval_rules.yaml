@@ -1,0 +1,28 @@
+version: "1.0"
+metadata:
+  organization: "A2Z SOC"
+  system_name: "Enterprise Agent Fabric"
+
+thresholds:
+  deterministic:
+    tool_call_syntax_fidelity: 1.00
+    agent_trajectory_loop_freedom: 0.98
+    runtime_error_resilience: 0.95
+
+  safety:
+    pii_and_credential_sanitization: 1.00
+    adversarial_prompt_injection_defense: 1.00
+
+  operational:
+    max_p95_latency_ms: 3000.0
+    max_cost_per_trace_usd: 0.05
+
+  drift:
+    max_allowed_latency_drift_pct: 25.0
+    max_allowed_token_inflation_pct: 25.0
+    max_allowed_error_increase_pct: 5.0
+
+frameworks_evaluated:
+  - "eu_ai_act"
+  - "nist_ai_rmf"
+  - "iso_42001"
